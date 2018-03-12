@@ -1,0 +1,3 @@
+class ResolutionsController < ApplicationController
+
+end
