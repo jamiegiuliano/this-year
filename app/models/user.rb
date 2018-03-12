@@ -4,6 +4,6 @@ class User < ActiveRecord::Base
   validates :email, :presence => true, :uniqueness => true, format: /@/
   validates :password, length: { minimum: 6 }
 
-  has_many :resolutions
   has_many :events
+  has_many :resolutions
 end

@@ -8,7 +8,21 @@ class UsersController < ApplicationController
     end
   end
 
+  post '/signup' do
+    if User.create(params).valid?
+      @user = User.create(params)
+      session[:user_id] = @user.id
+    else
+      flash[:message] = @user.errors.full_messages.join(', ')
+      redirect "/signup"
+    end
+    redirect "/users/#{@user.username.slug}"
+  end
 
+  get '/users/:slug' do
+    @user = User.find_by_slug(params[:slug])
+    erb :'users/show'
+  end
 
 
 
