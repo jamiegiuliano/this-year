@@ -1,0 +1,25 @@
+<% if flash.has?(:message) %>
+  <%= flash[:message] %>
+<% end %>
+
+<div class="landing-page--div h-100">
+  <div class="container h-100 landing-page--info text-center">
+    <h1 class="display-2 landing-page--header">This Year</h1>
+    <div class="col-lg-6 mr-auto ml-auto">
+      <p class="lead"><br />Login<br /> & Get Started.</p>
+    </div>
+    <form action="/login" method="POST">
+        <label for="username">Username:</label>
+          <input type="text" name="username" placeholder="Username:" id="username"></input>
+
+        <label for="email">Email:</label>
+          <input type="email" name="email" placeholder="Email:" id="email"></input>
+
+        <label for="password">Password:</label>
+          <input type="password" name="password" placeholder="Password:" id="password"></input><br />
+
+        <br /><input class="btn btn-lg btn-primary" type="submit" value="Login"></input>
+    </form>
+
+  </div>
+</div>

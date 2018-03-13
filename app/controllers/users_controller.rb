@@ -9,14 +9,14 @@ class UsersController < ApplicationController
   end
 
   post '/signup' do
-    if User.create(params).valid?
-      @user = User.create(params)
-      session[:user_id] = @user.id
+    @user = User.new(params)
+		if @user.save
+			session[:user_id] = @user.id
+      redirect "/users/#{@user.slug}"
     else
       flash[:message] = @user.errors.full_messages.join(', ')
-      redirect "/signup"
+      erb :'users/signup'
     end
-    redirect "/users/#{@user.username.slug}"
   end
 
   get '/users/:slug' do
@@ -24,19 +24,31 @@ class UsersController < ApplicationController
     erb :'users/show'
   end
 
+  get '/login' do
+    @user = User.find_by_id(session[:user_id])
 
-
-  helpers do
-    def logged_in?
-      !!current_user
+    if logged_in?
+      redirect "/users/#{@user.slug}"
     end
+    erb :'users/login'
+  end
 
-    def current_user
-      @current_user ||= User.find_by(id: session[:user_id])
+  post '/login' do
+    if @user = User.find_by(:username => params[:username]).try(:authenticate, params[:password])
+      session[:user_id] = @user.id
+    else
+      flash[:message] = "Username or Password incorrect"
+      redirect "/"
     end
+    redirect "/users/#{@user.slug}"
+  end
 
-    def username_available
-
+  get '/logout' do
+    if logged_in?
+      session.clear
+      redirect "/login"
+    else
+      redirect to "/"
     end
   end
 end

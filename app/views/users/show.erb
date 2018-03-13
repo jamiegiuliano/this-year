@@ -1,10 +1,10 @@
 <h2><%= current_user.username %></h2>
 
 <ul>
-<% current_user.resolutions.each do |res| %>
-
+<% current_user.resolutions.each do |resolution| %>
+  <%= resolution.name %>
+<% end %>
 </ul>
 <br>
-<a href="/tweets/new">Tweet</a>
-<a href="/tweets">All Tweets</a>
+
 <a href="/logout">Logout</a>

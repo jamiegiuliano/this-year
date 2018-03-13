@@ -1,4 +1,8 @@
-<h2>Signup & Start Tracking Your Year</h2>
+<% if flash.has?(:message) %>
+  <%= flash[:message] %>
+<% end %>
+
+<h2>Signup <br /> & Start Tracking Your Year</h2>
 
 <form action="/signup" method="POST">
     <label for="new_username">Username:</label>
