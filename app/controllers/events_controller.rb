@@ -17,7 +17,7 @@ class EventsController < ApplicationController
       current_user.events.create(params)
       redirect "/events"
     else
-      flash[:message] = "Event must have Title and Date."
+      flash[:message] = "Event must have Name and Date."
       erb :'events/new'
     end
   end

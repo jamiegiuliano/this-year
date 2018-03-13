@@ -1,0 +1,13 @@
+<h3>Add a Resolution</h3>
+
+<% if flash.has?(:message) %>
+  <%= flash[:message] %>
+<% end %><br></br>
+
+<form action="/resolutions/show" method="POST">
+
+  <label for="name">Event Name:</label>
+    <input type="text" name="name" placeholder="Drink more water." id="name"></input><br></br>
+
+  <input type="submit" value="submit">
+</form>

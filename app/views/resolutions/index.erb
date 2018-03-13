@@ -1,0 +1,15 @@
+<h3><%= current_user.username %>'s Resolutions</h3><br />
+
+<ol>
+<% current_user.resolutions.each do |res| %>
+  <% if res.user == current_user %>
+        <li><a href="/resolutions/<%=res.id%>"><%= res.name %></a></li><br />
+        <br></br>
+  <% end %>
+<% end %>
+</ol>
+
+<br></br>
+<p><a href="/users/<%=current_user.slug%>">Home</a>
+<p><a href="/resolutions/new">New Event</a>
+<p><a href="/logout">Logout</a>
