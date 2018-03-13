@@ -1,1 +1,11 @@
-<% binding.pry %>
+<h3><%= current_user.username %></h3><br />
+
+<ul>
+<% current_user.events.each do |event| %>
+    <li><%= event.date %></li>
+      <%= event.name %><br />
+      <%= event.description unless nil %>
+      <br></br>
+<% end %>
+
+<p><a href="/logout">log out</a>
