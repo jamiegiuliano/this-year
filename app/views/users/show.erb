@@ -1,8 +1,17 @@
-<h2><%= current_user.username %></h2>
+<h2><%= current_user.username %>'s Homepage</h2><br />
 
+<p>Resolutions</p>
 <ul>
 <% current_user.resolutions.each do |resolution| %>
   <%= resolution.name %>
+<% end %>
+</ul>
+<br>
+
+<p>Events</p>
+<ul>
+<% current_user.events.each do |event| %>
+  <li><a href="/events/<%=event.id%>"><%= event.name %></a></li><br />
 <% end %>
 </ul>
 <br>

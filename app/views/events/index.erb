@@ -1,11 +1,16 @@
-<h3><%= current_user.username %></h3><br />
+<h3><%= current_user.username %>'s Events</h3><br />
 
 <ul>
-<% current_user.events.each do |event| %>
-    <li><%= event.date %></li>
-      <%= event.name %><br />
-      <%= event.description unless nil %>
-      <br></br>
+<% Event.order(:date).each do |event| %>
+  <% if event.user == current_user %>
+      <li><%= event.date %></li>
+        <a href="/events/<%=event.id%>"><%= event.name %></a><br />
+        <%= event.description unless nil %>
+        <br></br>
+  <% end %>
 <% end %>
 
-<p><a href="/logout">log out</a>
+<br></br>
+<p><a href="/users/<%=current_user.slug%>">Home</a>
+<p><a href="/events/new">New Event</a>
+<p><a href="/logout">Logout</a>

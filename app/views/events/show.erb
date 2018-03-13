@@ -1,0 +1,17 @@
+<h2><%= @event.name %></h2>
+
+<ul>
+  <li><%= @event.date %></li>
+  <li><%= @event.description %></li>
+</ul>
+
+<form action="/events/<%=@event.id%>/delete" method="POST">
+  <input id="hidden" type="hidden" name="_method" value="delete">
+
+  <input type="submit" value="Delete Event"></input>
+
+</form>
+
+<br />
+<p><a href="/events/<%=@event.id%>/edit">Edit</a>
+<p><a href="/users/<%=@event.user.slug%>">Home</a>

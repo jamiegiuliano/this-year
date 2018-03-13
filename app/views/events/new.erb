@@ -1,5 +1,10 @@
 <h3>Add an Event</h3>
 
+<br />
+<% if flash.has?(:message) %>
+  <%= flash[:message] %>
+<% end %><br></br>
+
 <form action="/events/show" method="POST">
 
   <label for="event_name">Event Name:</label>
