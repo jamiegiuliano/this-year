@@ -36,11 +36,11 @@ class UsersController < ApplicationController
   post '/login' do
     if @user = User.find_by(:username => params[:username]).try(:authenticate, params[:password])
       session[:user_id] = @user.id
+      redirect "/users/#{@user.slug}"
     else
       flash[:message] = "Username or Password incorrect"
-      redirect to "/login"
+      erb :'users/login'
     end
-    redirect "/users/#{@user.slug}"
   end
 
   get '/logout' do
