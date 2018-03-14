@@ -23,10 +23,22 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <% if logged_in? %>
             <div class="navbar-nav">
-              <a class="nav-item nav-link active" href="/users/<%=current_user.slug%>">Home <span class="sr-only">(current)</span></a>
-              <a class="nav-item nav-link" href="/events/new">New Event</a>
-              <a class="nav-item nav-link" href="/resolutions/new">New Resolution</a>
-              <a class="nav-item nav-link" href="/logout">Logout</a>
+              <a class="nav-item nav-link active" style="margin-right: 30px" href="/users/<%=current_user.slug%>">Home<span class="sr-only">(current)</span></a>
+              <!-- Dropdown Menu-->
+              <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  New
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                  <!-- Dropdown -->
+                  <div>
+                    <a class="dropdown-item" href="/events/new">New Event</a>
+                    <a class="dropdown-item" href="/resolutions/new">New Resolution</a>
+                  </div>
+                </div>
+              </div>
+
+              <a class="nav-item nav-link" style="margin-left: 30px" href="/logout">Logout</a>
 
           <% else %>
           <div class="navbar-nav">

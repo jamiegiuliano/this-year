@@ -15,9 +15,12 @@
     <label for="new_password">Password:</label>
       <input type="password" name="password" placeholder="Password:" id="new_password"></input>
 
+      <!-- warning/flash message -->
       <% if flash.has?(:message) %>
-        <%= flash[:message] %>
-      <% end %>
+        <div class="alert alert-warning" role="alert">
+            <%= flash[:message] %>
+        </div>
+      <% end %><br></br>
 
-    <input type="submit" value="Signup">
+    <br /><input class="btn btn-lg btn-primary" type="submit" value="Signup"></input>
 </form>

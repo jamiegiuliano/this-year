@@ -1,10 +1,10 @@
 <h3><%= current_user.username %>'s Resolutions</h3><br />
 
-<ol>
+<ul>
 <% current_user.resolutions.each do |res| %>
-  <% if res.user == current_user %>
-        <li><a href="/resolutions/<%=res.id%>"><%= res.name %></a></li><br />
-        <br></br>
-  <% end %>
+  <label for="<%= res.id%>"><input type="checkbox" name="resolutions" id="<%= res.id%>" value="<%=res.id%>"
+    <%='checked' if @current_user.resolutions.include?(res) %>> <%=res.name%></input>
+    <a href="/resolutions/<%=res.id%>/edit">Edit</a>
+    <br></br>
 <% end %>
-</ol>
+</ul>

@@ -4,6 +4,9 @@
 <form action="/resolutions/<%=@resolution.id%>" method="POST">
   <input id="hidden" type="hidden" name="_method" value="patch">
 
+  <label for="completed">Completed?:</label>
+    <input type="checkbox" name="resolution[completed]" id="completed" value="y"></input>
+  <br />
   <label for="name">Resolution Name:</label>
     <input type="text" name="resolution[name]" placeholder="<%=@resolution.name%>" id="name"></input>
 

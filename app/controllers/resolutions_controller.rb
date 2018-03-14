@@ -40,6 +40,7 @@ class ResolutionsController < ApplicationController
   end
 
   patch '/resolutions/:id' do
+    binding.pry
     if !logged_in?
       redirect "/login"
     else
