@@ -1,8 +1,9 @@
-<% if flash.has?(:message) %>
-  <%= flash[:message] %>
-<% end %>
-
-<h2>Signup <br /> & Start Tracking Your Year</h2>
+<div class="landing-page--div h-100">
+  <div class="container h-100 landing-page--info text-center">
+    <h1 class="display-2 landing-page--header">This Year</h1>
+  <div class="col-lg-6 mr-auto ml-auto">
+    <p class="lead"><br />Signup<br /> & Get Started.</p>
+</div>
 
 <form action="/signup" method="POST">
     <label for="new_username">Username:</label>
@@ -13,6 +14,10 @@
 
     <label for="new_password">Password:</label>
       <input type="password" name="password" placeholder="Password:" id="new_password"></input>
+
+      <% if flash.has?(:message) %>
+        <%= flash[:message] %>
+      <% end %>
 
     <input type="submit" value="Signup">
 </form>

@@ -1,12 +1,9 @@
 <h2><%= @resolution.name %></h2>
+<br></br>
 
-<form action="/events/<%=@event.id%>/delete" method="POST">
+<form action="/resolutions/<%=@resolution.id%>/delete" method="POST">
   <input id="hidden" type="hidden" name="_method" value="delete">
 
-  <input type="submit" value="Delete Event"></input>
+  <input type="submit" value="Delete Resolution"></input>
 
 </form>
-
-<br />
-<p><a href="/events/<%=@resolution.id%>/edit">Edit</a>
-<p><a href="/users/<%=@resolution.user.slug%>">Home</a>

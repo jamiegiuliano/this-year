@@ -3,7 +3,8 @@
 <p>Resolutions</p>
 <ul>
 <% current_user.resolutions.each do |resolution| %>
-  <%= resolution.name %>
+  <li><%= resolution.name %></li>
+  <a href="/resolutions/<%=resolution.id%>/edit">Edit</a>
 <% end %>
 </ul>
 <br>
@@ -15,5 +16,3 @@
 <% end %>
 </ul>
 <br>
-
-<a href="/logout">Logout</a>
