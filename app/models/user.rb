@@ -8,5 +8,6 @@ class User < ActiveRecord::Base
   validates_presence_of :password
 
   has_many :events
+  has_many :user_resolutions
   has_many :resolutions, through: :user_resolutions
 end
