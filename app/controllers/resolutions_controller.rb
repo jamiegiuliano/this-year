@@ -12,8 +12,11 @@ class ResolutionsController < ApplicationController
   end
 
   post '/resolutions/show' do
-    if logged_in? && Resolution.create(params).valid?
-      current_user.resolutions.create(params)
+    if logged_in? && Resolution.create(params["resolution"]).valid?
+      @res = current_user.resolutions.create(params["resolution"])
+      if params["completed"] == "y"
+        
+      end
       redirect "/resolutions"
     else
       flash[:message] = "Resolutions must have Name."

@@ -3,6 +3,6 @@ class Resolution < ActiveRecord::Base
   include Slugify::InstanceMethods
 
   validates_presence_of :name
-  
+
   belongs_to :user
 end
