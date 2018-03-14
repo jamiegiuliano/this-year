@@ -9,10 +9,12 @@
 
 
 <form action="/resolutions/show" method="POST">
-
   <label for="exists"></label>
   <%Resolution.all.each do |res|%>
-    <label for="<%=res.id%>"><input type="checkbox" name="resolution[owner_id]" value="<%=owner.id%>" id="<%=owner.id%>"><%=owner.name%></input>
+    <% if !current_user.resolutions.include?(res) %>
+      <label for="<%=res.id%>"><input type="checkbox" name="id[]" value="<%=res.id%>" id="<%=res.id%>"> <%=res.name%></input>
+        <br></br>
+    <% end %>
   <%end%>
 
   <label for="new_name">Resolution Name:</label>
