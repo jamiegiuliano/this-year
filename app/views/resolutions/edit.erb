@@ -4,11 +4,15 @@
 <form action="/resolutions/<%=@resolution.id%>" method="POST">
   <input id="hidden" type="hidden" name="_method" value="patch">
 
-  <label for="completed">Completed?:</label>
-    <input type="checkbox" name="completed[]" id="completed" value="y"></input>
-  <br />
   <label for="name">Resolution Name:</label>
     <input type="text" name="resolution[name]" placeholder="<%=@resolution.name%>" id="name"></input>
 
   <br /><input type="submit" value="submit">
+</form>
+<br />
+<form action="/resolutions/<%=@resolution.id%>/delete" method="POST">
+  <input id="hidden" type="hidden" name="_method" value="delete">
+
+  <input type="submit" value="Delete Resolution"></input>
+
 </form>

@@ -13,10 +13,10 @@ class ResolutionsController < ApplicationController
 
   post '/resolutions/show' do
     if logged_in?
-      if params["resolution"]["name"] && params["id"]
+      if params["resolution"]["name"] && params["res_id"]
         current_user.resolutions.create(params["resolution"])
 
-        params[:id].each do |id|
+        params[:res_id].each do |id|
           res = Resolution.find_by_id(id)
           current_user.resolutions << res
           current_user.save
@@ -65,8 +65,7 @@ class ResolutionsController < ApplicationController
 
   delete '/resolutions/:id/delete' do
     @resolution = Resolution.find_by_id(params[:id])
-
-    if @resolution.user == current_user then @resolution.delete else redirect "/users/#{@resolution.user.slug}" end
+    if @resolution.users.include?(current_user) then @resolution.delete else redirect "/users/#{@resolution.user.slug}" end
 
     redirect "/resolutions"
   end

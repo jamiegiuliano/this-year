@@ -5,19 +5,29 @@
   <div class="alert alert-warning" role="alert">
       <%= flash[:message] %>
   </div>
-<% end %><br></br>
-
+<% end %>
 
 <form action="/resolutions/show" method="POST">
-  <label for="exists"></label>
-  <%Resolution.all.each do |res|%>
-    <% if !current_user.resolutions.include?(res) %>
-      <label for="<%=res.id%>"><input type="checkbox" name="id[]" value="<%=res.id%>" id="<%=res.id%>"> <%=res.name%></input>
-        <br></br>
-    <% end %>
-  <%end%>
-
-  <label for="new_name">Resolution Name:</label>
+      <!-- Scrollbar -->
+      <div class="container" style="margin-top:20px;">
+	       <div class="row">
+           <div class="col-xs-6">
+            <h4 class="text-center">Choose an Existing Resolution:</h4>
+            <div class="well" style="max-height: 200px;max-width: 500px;overflow: auto;">
+        		<ul class="list-group checked-list-box">
+            <label for="exists"></label>
+              <%Resolution.all.each do |res|%>
+                <% if !current_user.resolutions.include?(res) %>
+                  <li class="list-group-item"><label for="<%=res.id%>"><input type="checkbox" name="res_id[]" value="<%=res.id%>" id="<%=res.id%>">  <%=res.name%></input></li>
+                <% end %>
+              <%end%>
+            </ul>
+          </div>
+        </div>
+    </div>
+<br />
+  <h4><label>and/or Create a New Resolution:</label></h4>
+  <label for="new_name" style="margin-right: 30px" >Resolution Name:</label>
     <input type="text" name="resolution[name]" placeholder="ex. Drink more water." id="new_name"></input><br></br>
 
   <input type="submit" value="submit">
