@@ -1,19 +1,66 @@
-<h2><%= current_user.username %>'s Year (so far)</h2><br />
+<!-- left column -->
+<div class="col-sm-5">
 
-<p>Resolutions</p>
-<ol>
-<% current_user.resolutions.each do |res| %>
-  <li><label for="<%= res.id%>"><%=res.name%></input></label></li>
-    <a href="/resolutions/<%=res.id%>/edit">Edit</a>
-    <br></br>
-<% end %>
-</ol>
-<br>
+     <div class="panel panel-default">
+       <div class="panel-body">
+         <p class="lead"> Welcome, <%= current_user.username %></p>
+         <p>Your Year (so far!)</p>
+       </div>
+     </div>
 
-<p>Events</p>
-<ul>
-<% current_user.events.each do |event| %>
-  <li><a href="/events/<%=event.id%>"><%= event.name %></a></li><br />
-<% end %>
-</ul>
-<br>
+     <div class="panel panel-default">
+
+       <div class="panel-heading">
+         <a href="/resolutions/new" id ="add-button" role="button" data-toggle="modal"><span class="badge">Add Resolution</span></a>
+          <h4>Your Resolutions</h4>
+        </div>
+         <div class="panel-body">
+           <div class="list-group">
+             <ol>
+             <% current_user.resolutions.each do |res| %>
+                <li><label for="<%= res.id%>"><%=res.name%></input></label></li>
+                  <a href="/resolutions/<%=res.id%>/edit">Edit</a>
+                <br></br>
+             <% end %>
+            </ol>
+
+           </div>
+          </div>
+      </div>
+    </div>
+
+<!-- right column -->
+<div class="col-sm-7">
+
+  <div class="panel panel-default">
+    <div class="panel-heading"><h4>What Is This Year?</h4></div>
+        <div class="panel-body">
+          This Year Description
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+
+      <div class="panel-heading">
+        <a href="/resolutions/new" id ="add-button" role="button" data-toggle="modal"><span class="badge">Add Event</span></a>
+         <h4>Your Events</h4>
+       </div>
+        <div class="panel-body">
+          <div class="list-group">
+            <ul>
+              <% Event.order(:date).each do |event| %>
+                <% if event.user == current_user %>
+                  <% current_user.events.each do |event| %>
+                    <li><%= event.date %></li>
+                      <label for="<%= event.id%>"><%=event.name%></input></label>
+                        <a href="/events/<%=event.id%>/edit">Edit</a>
+                    <br></br>
+                    <% end %>
+                  <% end %>
+                <% end %>
+              </ul>
+            </div>
+         </div>
+       </div>
+     </div>
+  </div>
