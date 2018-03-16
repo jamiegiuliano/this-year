@@ -18,3 +18,7 @@ Download or Fork this repository
 - `bundle install`
 - `rake db:migrate`
 - `rackup config.ru` or `shotgun` to launch local server
+
+## Contributing
+
+Bug reports and pull requests are welcome on GitHub at https://github.com/Nick-Damico/auction-calendar This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
