@@ -10,3 +10,11 @@ events that happened throughout the year- big or small!
 Whether you started your dream career or finally
 tried that fancy restaurant you've been dying to check out- ThisYear compiles all of your moments so
 you can look back and reminisce on all the fun things you've accomplished come December.
+
+## Usage
+
+Download or Fork this repository
+- `cd auction-calendar` into the projects directory
+- `bundle install`
+- `rake db:migrate`
+- `rackup config.ru` or `shotgun` to launch local server
