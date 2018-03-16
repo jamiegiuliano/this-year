@@ -2,15 +2,14 @@
 <h3 class="display-4 text-center">Edit a Resolution</h3>
   <br />
 
-<form>
+<form action="/resolutions/<%=@resolution.id%>" method="POST">
   <div class="row justify-content-center">
-  <div class="form-group">
-    <form action="/resolutions/<%=@resolution.id%>" method="POST">
+  <div class="form-group col-md-4">
       <input id="hidden" type="hidden" name="_method" value="patch">
 
-      <label for="name">New Name:</label><br />
+      <label for="name" class="container mt-4 justify-content-center" >New Name:</label>
         <input class="form-control" type="text" name="resolution[name]" placeholder="<%=@resolution.name%>" id="name"></input>
-      
+
   </div>
     <div class="container">
       <div class="row justify-content-center">
