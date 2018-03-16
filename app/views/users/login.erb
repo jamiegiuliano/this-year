@@ -14,8 +14,15 @@
                           <h3 class="panel-title">Login</h3>
                       </div>
                       <div class="panel-body">
-                          <form role="form">
+                          <form role="form"action="/login" method="POST">
                               <fieldset>
+                                <!-- warning/flash message -->
+                                <% if flash.has?(:message) %>
+                                <div class="alert alert-warning" role="alert">
+                                  <%= flash[:message] %>
+                                </div>
+                                <% end %><br></br>
+
                                   <div class="form-group">
                                       <input class="form-control" type="text" name="username" placeholder="Username:" id="username" autofocus=""></input>
                                   </div>
@@ -27,9 +34,10 @@
                                   </div>
 
                                   <br /><input class="btn btn-lg btn-primary" type="submit" value="Login"></input>
+
                               </fieldset>
                           </form>
                       </div>
                   </div>
                 </div>
-  </div>
+              </div>

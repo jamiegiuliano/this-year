@@ -5,22 +5,40 @@
     <p class="lead"><br />Signup<br /> & Get Started.</p>
 </div>
 
-<form action="/signup" method="POST">
-    <label for="new_username">Username:</label>
-      <input type="text" name="username" placeholder="Username:" id="new_username"></input>
+<!-- Signup Form -->
+<div class="container" style="margin-top:30px">
+  <div class="row">
+    <div class="col-md-4"></div>
+<div class="col-md-4">
+<div class="login-panel panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Signup</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form role="form"action="/signup" method="POST">
+                            <fieldset>
+                              <!-- warning/flash message -->
+                              <% if flash.has?(:message) %>
+                              <div class="alert alert-warning" role="alert">
+                                <%= flash[:message] %>
+                              </div>
+                              <% end %><br></br>
 
-    <label for="new_email">Email:</label>
-      <input type="email" name="email" placeholder="Email:" id="new_email"></input>
+                                <div class="form-group">
+                                    <input class="form-control" type="text" name="username" placeholder="Username:" id="username" autofocus=""></input>
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" type="email" name="email" placeholder="Email:" id="email" autofocus=""></input>
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" type="password" name="password" placeholder="Password:" id="password" value="">
+                                </div>
 
-    <label for="new_password">Password:</label>
-      <input type="password" name="password" placeholder="Password:" id="new_password"></input>
+                                <br /><input class="btn btn-lg btn-primary" type="submit" value="Login"></input>
 
-      <!-- warning/flash message -->
-      <% if flash.has?(:message) %>
-        <div class="alert alert-warning" role="alert">
-            <%= flash[:message] %>
-        </div>
-      <% end %><br></br>
-
-    <br /><input class="btn btn-lg btn-primary" type="submit" value="Signup"></input>
-</form>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+              </div>
+            </div>
