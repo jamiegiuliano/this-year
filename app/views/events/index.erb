@@ -1,11 +1,16 @@
-<h3><%= current_user.username %>'s Events</h3><br />
+<div class="container mt-4">
+  <h2 class="display-4 text-center"><%= current_user.username %>'s Events</h2>
 
-<ul>
-<% Event.order(:date).each do |event| %>
-  <% if event.user == current_user %>
-      <li><%= event.date %></li>
-        <a href="/events/<%=event.id%>"><%= event.name %></a><br />
-        <%= event.description unless nil %>
-        <br></br>
-  <% end %>
-<% end %>
+<div class="text-center">
+  <ul class="list-group" >
+    <div class="container">
+      <% Event.order(:date).each do |event| %>
+        <% if event.user == current_user %>
+          <li class="list-group-item"><%= event.date %><br />
+          <a class="btn btn-outline-primary" href="/events/<%=event.id%>/edit">Edit</a><br />
+          <%= event.description unless nil %></li>
+          <% end %>
+      <% end %>
+    </div>
+  </ul>
+</div>
