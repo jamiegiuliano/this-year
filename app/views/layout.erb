@@ -8,7 +8,7 @@
 
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/css/bootstrap_override.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
 
 
     <!-- For Scrollbar -->
@@ -16,12 +16,18 @@
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
+    <style>
+    body {
+
+    }
+    </style>
+
   </head>
   <body>
     <div class="wrapper">
-      <div style="font-family: 'Montserrat', sans-serif;">
+      <div style="font-family: system;">
 
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <nav class="navbar navbar-expand-lg navbar-light bg-dark">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         </button>
 
@@ -29,9 +35,24 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <% if logged_in? %>
             <div class="navbar-nav">
-              <a class="nav-item nav-link active" style="margin-right: 30px" href="/users/<%=current_user.slug%>"><span class="glyphicon glyphicon-home" aria-hidden="true"></span><span class="sr-only">(current)</span></a>
-              <!-- Dropdown Menu-->
+              <a class="nav-item nav-link active" style="margin-right: 30px" href="/users/<%=current_user.slug%>"><span class="glyphicon glyphicon-home" style="color: #0F73F2;" aria-hidden="true"></span><span class="sr-only">(current)</span></a>
+
+              <!-- 'All' Dropdown -->
               <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  All
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                  <!-- Dropdown -->
+                  <div>
+                    <a class="dropdown-item" href="/events">All Events</a>
+                    <a class="dropdown-item" href="/resolutions">All Resolutions</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 'New' Dropdown Menu-->
+              <div class="dropdown" style="margin-left:10px;">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   New
                 </button>
@@ -44,6 +65,7 @@
                 </div>
               </div>
 
+              <!-- Logout -->
               <a class="nav-item nav-link" style="margin-left: 30px" href="/logout">Logout</a>
 
           <% else %>

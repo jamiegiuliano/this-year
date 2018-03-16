@@ -1,17 +1,16 @@
 <!-- left column -->
 <div class="col-sm-5">
 
-     <div class="panel panel-default" style="background-color: #006dcc; border-color: #0044cc;">
+     <div class="panel panel-default" style="background-color: #0F73F2; border-color: #0F61F2;">
        <div class="panel-body text-center">
-         <p class="lead display-4" style="color: #fff;"> Welcome, <%= current_user.username %></p>
-         <p style="color: #fff;">Your Year (so far!)</p>
+         <p class="lead display-4" style="color: #fff;"> Welcome, <%= current_user.username %>!</p>
        </div>
      </div>
 
      <div class="panel panel-default">
 
        <div class="panel-heading display-4">
-          <h4>Your Resolutions</h4>
+          <h4>Your Resolutions <a class="badge" href="/resolutions/new">new</a></h4>
         </div>
          <div class="panel-body">
            <div class="list-group">
@@ -46,9 +45,8 @@
     </div>
 
     <div class="panel panel-default">
-
       <div class="panel-heading display-4">
-         <h4>Your Events</h4>
+         <h4>Your Events <a class="badge" href="/events/new">new</a></h4>
        </div>
         <div class="panel-body">
           <div class="list-group">
