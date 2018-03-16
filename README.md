@@ -1,3 +1,12 @@
 # ThisYear
 
 Flatiron School - Sinatra Final Portfolio Project
+
+Years seems to pass incredibly fast and before you know it, those resolutions from the beginning of the year
+are forgotten and your left wondering "What actually happened this year?"
+That's where ThisYear comes in!
+ThisYear helps you remember the resolutions you made in the beginning of the year, while also tracking the
+events that happened throughout the year- big or small!
+Whether you started your dream career or finally
+tried that fancy restaurant you've been dying to check out- ThisYear compiles all of your moments so
+you can look back and reminisce on all the fun things you've accomplished come December.
