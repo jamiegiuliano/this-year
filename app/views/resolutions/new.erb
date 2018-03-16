@@ -16,11 +16,15 @@
             <div class="well" style="max-height: 200px;max-width: 500px;overflow: auto;">
         		<ul class="list-group checked-list-box">
             <label for="exists"></label>
+          <% if current_user.resolutions.size >=  Resolution.all.size %>
+            <li class="list-group-item"><%= "You already have all of these!" %></li>
+          <% else %>
               <%Resolution.all.each do |res|%>
                 <% if !current_user.resolutions.include?(res) %>
                   <li class="list-group-item"><label for="<%=res.id%>"><input type="checkbox" name="res_id[]" value="<%=res.id%>" id="<%=res.id%>">  <%=res.name%></input></li>
                 <% end %>
               <%end%>
+          <% end %>
             </ul>
           </div>
         </div>
