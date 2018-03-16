@@ -16,6 +16,7 @@
             <div class="well" style="max-height: 200px;max-width: 500px;overflow: auto;">
         		<ul class="list-group checked-list-box">
             <label for="exists"></label>
+
           <% if current_user.resolutions.size >=  Resolution.all.size %>
             <li class="list-group-item"><%= "You already have all of these!" %></li>
           <% else %>
@@ -25,6 +26,7 @@
                 <% end %>
               <%end%>
           <% end %>
+
             </ul>
           </div>
         </div>
