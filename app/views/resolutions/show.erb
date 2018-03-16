@@ -1,9 +1,15 @@
-<h2><%= @resolution.name %></h2>
-<br></br>
+<div class="container mt-4">
+  <h2 class="display-4 text-center"><%= @resolution.name %></h2>
+  <br></br>
 
-<form action="/resolutions/<%=@resolution.id%>/delete" method="POST">
-  <input id="hidden" type="hidden" name="_method" value="delete">
+  <!-- Delete -->
+  <div class="text-center">
+  <form action="/resolutions/<%=@resolution.id%>/delete" method="POST">
+    <input id="hidden" type="hidden" name="_method" value="delete">
 
-  <input type="submit" value="Delete Resolution"></input>
-
-</form>
+    <button type="submit" class="btn btn-default btn-md" style="margin-left:10px;">
+      <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+    </button>
+  </form>
+  </div>
+</div>

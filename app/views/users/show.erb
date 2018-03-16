@@ -1,16 +1,16 @@
 <!-- left column -->
 <div class="col-sm-5">
 
-     <div class="panel panel-default">
-       <div class="panel-body">
-         <p class="lead"> Welcome, <%= current_user.username %></p>
-         <p>Your Year (so far!)</p>
+     <div class="panel panel-default" style="background-color: #006dcc; border-color: #0044cc;">
+       <div class="panel-body text-center">
+         <p class="lead display-4" style="color: #fff;"> Welcome, <%= current_user.username %></p>
+         <p style="color: #fff;">Your Year (so far!)</p>
        </div>
      </div>
 
      <div class="panel panel-default">
 
-       <div class="panel-heading">
+       <div class="panel-heading display-4">
           <h4>Your Resolutions</h4>
         </div>
          <div class="panel-body">
@@ -18,7 +18,7 @@
              <ol>
              <% current_user.resolutions.each do |res| %>
                 <li><label for="<%= res.id%>"><%=res.name%></input></label></li>
-                  <a href="/resolutions/<%=res.id%>/edit">Edit</a>
+                  <a class="btn btn-outline-primary" href="/resolutions/<%=res.id%>/edit">Edit</a>
                 <br></br>
              <% end %>
             </ol>
@@ -32,7 +32,7 @@
 <div class="col-sm-7">
 
   <div class="panel panel-default">
-    <div class="panel-heading"><h4>What Is This Year?</h4></div>
+    <div class="panel-heading display-4"><h4>What Is This Year?</h4></div>
         <div class="panel-body">
           Years seems to pass incredibly fast and before you know it, those resolutions from the beginning of the year
           are forgotten and your left wondering <i>"What actually happened this year?"</i>
@@ -47,7 +47,7 @@
 
     <div class="panel panel-default">
 
-      <div class="panel-heading">
+      <div class="panel-heading display-4">
          <h4>Your Events</h4>
        </div>
         <div class="panel-body">
@@ -58,7 +58,7 @@
                   <% current_user.events.each do |event| %>
                     <li><%= event.date %></li>
                       <label for="<%= event.id%>"><%=event.name%></input></label><br />
-                        <a href="/events/<%=event.id%>/edit">Edit</a>
+                        <a class="btn btn-outline-primary" href="/events/<%=event.id%>/edit">Edit</a>
                     <br></br>
                     <% end %>
                   <% end %>
