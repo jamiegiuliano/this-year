@@ -57,7 +57,7 @@
                 <% if event.user == current_user %>
                   <% current_user.events.each do |event| %>
                     <li><%= event.date %></li>
-                      <label for="<%= event.id%>"><%=event.name%></input></label>
+                      <label for="<%= event.id%>"><%=event.name%></input></label><br />
                         <a href="/events/<%=event.id%>/edit">Edit</a>
                     <br></br>
                     <% end %>

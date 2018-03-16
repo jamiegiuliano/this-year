@@ -33,8 +33,11 @@
     </div>
 <br />
   <h4><label>and/or Create a New Resolution:</label></h4>
-  <label for="new_name" style="margin-right: 30px" >Resolution Name:</label>
-    <input type="text" name="resolution[name]" placeholder="ex. Drink more water." id="new_name"></input><br></br>
+  <form class="form-inline">
+  <div class="form-group col-xs-4">
+    <label for="new_name" style="margin-right: 30px" >Resolution Name:</label>
+      <input class="form-control" type="text" name="resolution[name]" placeholder="ex. Drink more water." id="new_name"></input><br></br>
 
-  <input type="submit" value="submit">
+      <button type="button" class="btn btn-primary">Create</button>
+  </div>
 </form>

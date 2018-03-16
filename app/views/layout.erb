@@ -4,10 +4,8 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-
     <title>This Year</title>
-
-    <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond" rel="stylesheet">
+    
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/css/bootstrap_override.css">
     <!-- For Scrollbar -->
@@ -27,7 +25,7 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <% if logged_in? %>
             <div class="navbar-nav">
-              <a class="nav-item nav-link active" style="margin-right: 30px" href="/users/<%=current_user.slug%>">Home<span class="sr-only">(current)</span></a>
+              <a class="nav-item nav-link active" style="margin-right: 30px" href="/users/<%=current_user.slug%>"><span class="glyphicon glyphicon-home" aria-hidden="true"></span><span class="sr-only">(current)</span></a>
               <!-- Dropdown Menu-->
               <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
