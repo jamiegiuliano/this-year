@@ -1,17 +1,31 @@
-<h3>Edit an Event</h3>
+<div class="container mt-4">
+  <h3 class="display-4 text-center">Edit an Event</h3>
 
-<br />
 <form action="/events/<%=@event.id%>" method="POST">
   <input id="hidden" type="hidden" name="_method" value="patch">
+  <div class="row justify-content-center">
+    <div class="form-group col-md-4">
+      <div class="container" style="margin-top:20px;">
+	       <div class="row">
+           <div class="col-xs-4">
 
   <label for="event_name">Event Name:</label>
-    <input type="text" name="event[name]" placeholder="<%=@event.name%>" id="event_name"></input>
+  <form class="form-inline">
+    <div class="form-group col-sm">
+      <input class="form-control" type="text" name="event[name]" placeholder="<%=@event.name%>" id="event_name"></input>
+    </div>
 
   <label for="event_date">Event Date:</label>
-    <input type="date" name="event[date]" placeholder="<%=@event.date%>" id="event_date"></input><br />
+    <div class="form-group col-sm">
+      <input class="form-control" type="date" name="event[date]" placeholder="<%=@event.date%>" id="event_date"></input>
+    </div>
 
-  <br /><label for="event_desc">Description(optional):</label>
-    <p><textarea name="event[description]" placeholder="<%=@event.description unless nil%>" id="event_desc"></textarea><br />
+  <label for="event_desc">Description(optional):</label>
+    <div class="form-group col-sm">
+      <textarea class="form-control" name="event[description]" placeholder="<%=@event.description unless nil%>" id="event_desc"></textarea>
+    </div>
 
-  <br /><button type="button" class="btn btn-primary">Edit</button>
+    <div class="row justify-content-center">
+      <button type="submit" class="btn btn-primary">Edit</button>
+    </div>
 </form>
