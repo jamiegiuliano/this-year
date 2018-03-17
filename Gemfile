@@ -11,6 +11,7 @@ gem 'thin'
 gem 'bcrypt'
 gem 'rack-flash3'
 gem 'activerecord', :require => 'active_record'
+gem 'pg'
 
 group :development, :test do
   gem 'sqlite3'
@@ -20,6 +21,5 @@ group :development, :test do
 end
 
 group :production do
-  gem 'pg'
   gem 'rails_12factor'
 end
