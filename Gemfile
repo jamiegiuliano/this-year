@@ -9,6 +9,7 @@ gem 'require_all'
 gem 'thin'
 gem 'rack-flash3'
 gem 'bcrypt'
+gem 'sqlite3'
 
 group :development do
   gem 'tux'
@@ -16,7 +17,6 @@ group :development do
 end
 
 group :development, :test do
-  gem 'sqlite3'
   gem 'pry'
 end
 
