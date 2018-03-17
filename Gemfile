@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 # git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 
-ruby '2.4.1'
+ruby '2.3.3'
 gem 'sinatra'
 gem 'sinatra-activerecord', :require => 'sinatra/activerecord'
 gem 'rake'
