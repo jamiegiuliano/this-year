@@ -2,12 +2,13 @@ ENV['SINATRA_ENV'] ||= "development"
 
 require 'bundler/setup'
 
-configure :development do
-  ENV['SINATRA_ENV'] ||= "development"
+environments = [:default] << ENV['SINATRA_ENV'] if ENV['SINATRA_ENV']
+Bundler.require(*environments)
 
+configure :development do
   ActiveRecord::Base.establish_connection(
     :adapter => "sqlite3",
-    :database => "db/neighborhood#{ENV['SINATRA_ENV']}.sqlite"
+    :database => "db/#{ENV['SINATRA_ENV']}.sqlite"
   )
 end
 
