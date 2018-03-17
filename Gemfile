@@ -14,8 +14,6 @@ gem 'rack-flash3'
 gem 'paperclip', '~> 5.2', '>= 5.2.1'
 gem 'pg'
 gem 'activerecord', :require => 'active_record'
-gem 'sinatra-activerecord', :require => 'sinatra/activerecord'
-gem 'pg'
 gem 'shotgun', :group => :development
 gem 'tux', :group => :development
 gem 'pry', :group => :development
