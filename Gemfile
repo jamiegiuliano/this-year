@@ -12,9 +12,16 @@ gem 'bcrypt'
 gem 'rails-erd'
 gem 'rack-flash3'
 gem 'paperclip', '~> 5.2', '>= 5.2.1'
-gem 'pg', :group => :production
 gem 'activerecord', :require => 'active_record'
-gem 'shotgun', :group => :development
-gem 'tux', :group => :development
-gem 'pry', :group => :development
-gem 'sqlite3', '1.3.13', :group => :development
+gem 'pg'
+
+group :development do
+  gem 'sqlite3'
+  gem 'shotgun'
+  gem 'tux'
+  gem 'pry'
+end
+
+group :production do
+  gem 'rails_12factor'
+end
