@@ -12,7 +12,7 @@ gem 'bcrypt'
 gem 'rails-erd'
 gem 'rack-flash3'
 gem 'paperclip', '~> 5.2', '>= 5.2.1'
-gem 'pg'
+gem 'pg', :group => :production
 gem 'activerecord', :require => 'active_record'
 gem 'shotgun', :group => :development
 gem 'tux', :group => :development
