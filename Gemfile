@@ -12,14 +12,11 @@ gem 'bcrypt'
 gem 'rack-flash3'
 gem 'activerecord', :require => 'active_record'
 gem 'pg'
+gem 'rails-erd'
 
 group :development, :test do
   gem 'sqlite3'
   gem 'shotgun'
   gem 'tux'
   gem 'pry'
-end
-
-group :production do
-  gem 'rails_12factor'
 end
