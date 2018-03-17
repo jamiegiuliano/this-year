@@ -17,4 +17,4 @@ gem 'activerecord', :require => 'active_record'
 gem 'shotgun', :group => :development
 gem 'tux', :group => :development
 gem 'pry', :group => :development
-gem 'sqlite3', :group => :development
+gem 'sqlite3', '1.3.13', :group => :development
