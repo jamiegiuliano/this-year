@@ -15,7 +15,6 @@ GEM
     arel (8.0.0)
     bcrypt (3.1.11)
     bond (0.5.1)
-    choice (0.2.0)
     coderay (1.1.2)
     concurrent-ruby (1.0.5)
     daemons (1.2.6)
@@ -30,22 +29,10 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
     rack (2.0.4)
-    rack-flash3 (1.0.5)
-      rack
     rack-protection (2.0.1)
       rack
     rack-test (0.6.3)
       rack (>= 1.0)
-    rails-erd (1.5.2)
-      activerecord (>= 3.2)
-      activesupport (>= 3.2)
-      choice (~> 0.2.0)
-      ruby-graphviz (~> 1.2)
-    rails_12factor (0.0.3)
-      rails_serve_static_assets
-      rails_stdout_logging
-    rails_serve_static_assets (0.0.5)
-    rails_stdout_logging (0.0.5)
     rake (12.3.0)
     require_all (2.0.0)
     ripl (0.7.1)
@@ -56,7 +43,6 @@ GEM
       rack (>= 1.0)
       rack-test (~> 0.6.2)
       ripl (>= 0.7.0)
-    ruby-graphviz (1.2.3)
     shotgun (0.9.2)
       rack (>= 1.0)
     sinatra (2.0.1)
@@ -90,9 +76,6 @@ DEPENDENCIES
   bcrypt
   pg
   pry
-  rack-flash3
-  rails-erd
-  rails_12factor
   rake
   require_all
   shotgun
