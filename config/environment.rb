@@ -1,6 +1,6 @@
-ENV['SINATRA_ENV'] ||= "development"
-
 require 'bundler/setup'
+
+ENV['SINATRA_ENV'] ||= "development"
 
 environments = [:default] << ENV['SINATRA_ENV'] if ENV['SINATRA_ENV']
 Bundler.require(*environments)
