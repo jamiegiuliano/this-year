@@ -3,21 +3,16 @@ source 'http://rubygems.org'
 
 ruby '2.3.3'
 
-gem 'sinatra'
+
+gem 'activerecord', :require => 'active_record'
 gem 'sinatra-activerecord', :require => 'sinatra/activerecord'
+gem 'pg'
+gem 'sqlite3', :group => :development
+gem 'sinatra'
+gem 'thin'
+gem 'shotgun', :group => :development
+gem 'tux', :group => :development
+gem 'pry', :group => :development
 gem 'rake'
 gem 'require_all'
-gem 'thin'
 gem 'bcrypt'
-gem 'rack-flash3'
-gem 'activerecord', :require => 'active_record'
-gem 'pg'
-gem 'rails-erd'
-gem 'rails_12factor', group: :production
-
-group :development, :test do
-  gem 'sqlite3'
-  gem 'shotgun'
-  gem 'tux'
-  gem 'pry'
-end
