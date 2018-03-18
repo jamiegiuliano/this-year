@@ -23,6 +23,6 @@ configure :production do
   )
 end
 
-require 'sinatra/base'
+
 require 'rack-flash'
 require_all 'app'

@@ -16,3 +16,4 @@ gem 'pry', :group => :development
 gem 'rake'
 gem 'require_all'
 gem 'bcrypt'
+gem 'rack-flash3'
