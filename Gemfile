@@ -13,6 +13,7 @@ gem 'rack-flash3'
 gem 'activerecord', :require => 'active_record'
 gem 'pg'
 gem 'rails-erd'
+gem 'rails_12factor', group: :production
 
 group :development, :test do
   gem 'sqlite3'
