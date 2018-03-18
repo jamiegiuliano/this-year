@@ -1,4 +1,4 @@
-class AddColumnToEvents < ActiveRecord::Migration[4.2]
+class AddColumnToEvents < ActiveRecord::Migration[5.0]
   def change
     add_column :events, :description, :string
   end

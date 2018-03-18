@@ -1,4 +1,4 @@
-class CreateUserResolutions < ActiveRecord::Migration[4.2]
+class CreateUserResolutions < ActiveRecord::Migration[5.0]
   def change
     create_table :user_resolutions do |t|
       t.integer :user_id
