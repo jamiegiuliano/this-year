@@ -56,9 +56,11 @@
               <% Event.order(:date).each do |event| %>
                 <% if event.user == current_user %>
                   <% current_user.events.each do |event| %>
-                    <li><%= event.date %></li>
-                      <label for="<%= event.id%>"><%=event.name%></input></label><br />
-                        <a class="btn btn-outline-primary" href="/events/<%=event.id%>/edit">Edit</a>
+                    <div class="container">
+                      <li><%= event.date %></li>
+                        <label for="<%= event.id%>"><%=event.name%></input></label><br />
+                          <a class="btn btn-outline-primary" href="/events/<%=event.id%>/edit">Edit</a>
+                    </div>
                     <br></br>
                     <% end %>
                   <% end %>
