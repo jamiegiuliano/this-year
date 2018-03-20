@@ -1,5 +1,7 @@
 # ThisYear
 
+![Alt Text](giphy.gif)
+
 Flatiron School - Sinatra Final Portfolio Project
 
 Years seems to pass incredibly fast and before you know it, those resolutions from the beginning of the year
