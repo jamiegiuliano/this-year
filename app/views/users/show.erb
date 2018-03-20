@@ -32,6 +32,14 @@
 <!-- right column -->
 <div class="col-sm-7">
 
+  <div class="panel panel-default">
+    <div class="panel-heading display-4"><h4>Today is</h4></div>
+        <div class="panel-body">
+          <% @time = DateTime.now %>
+          <h4 style="color: #0F73F2;"><%= @time.strftime("%A, %d %B %Y") %></h4>
+        </div>
+    </div>
+
     <div class="panel panel-default">
       <div class="panel-heading display-4">
          <h4>Your Events <a class="badge" href="/events/new">new</a></h4>
