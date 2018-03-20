@@ -5,6 +5,9 @@
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 
+.glyphicon.glyphicon-home {
+    font-size: 100px;
+}
 
 .state-icon {
     left: -5px;
