@@ -7,6 +7,7 @@
       <% Event.order(:date).each do |event| %>
         <% if event.user == current_user %>
           <li class="list-group-item"><%= event.date %><br />
+            <%= event.name %>
             <%= event.description unless nil %><br />
             <a class="btn btn-outline-primary" href="/events/<%=event.id%>/edit">Edit</a>
           </li>
