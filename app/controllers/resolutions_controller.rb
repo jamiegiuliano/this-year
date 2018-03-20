@@ -64,7 +64,8 @@ class ResolutionsController < ApplicationController
 
   delete '/resolutions/:id/delete' do
     @resolution = Resolution.find_by_id(params[:id])
-    if @resolution.users.include?(current_user) then @resolution.delete else redirect "/users/#{@resolution.user.slug}" end
+    
+    if @resolution.users.include?(current_user) then current_user.resolutions.delete(@resolution) else redirect "/users/#{@resolution.user.slug}" end
 
     redirect "/resolutions"
   end
