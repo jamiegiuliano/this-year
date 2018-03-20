@@ -24,29 +24,26 @@
     <div class="wrapper">
       <div style="font-family: 'Montserrat', sans-serif;">
 
-      <nav class="navbar navbar-expand-lg navbar-light bg-dark">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        </button>
-
         <!-- Navigation -->
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <% if logged_in? %>
-            <div class="navbar-nav">
-              <a class="nav-item nav-link active" style="margin-right: 30px" href="/users/<%=current_user.slug%>"><span class="glyphicon glyphicon-home" style="color: #0F73F2;" aria-hidden="true"></span><span class="sr-only">(current)</span></a>
+        <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <% if logged_in? %>
+              <div class="navbar-nav">
+                <a class="navbar-brand" href="/users/<%=current_user.slug%>"><span class="glyphicon glyphicon-home" style="color: #0F73F2;" aria-hidden="true"></span></a>
 
               <!-- 'All' Dropdown -->
-              <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  All
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                  <!-- Dropdown -->
-                  <div>
-                    <a class="dropdown-item" href="/events">All Events</a>
-                    <a class="dropdown-item" href="/resolutions">All Resolutions</a>
+                  <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      All
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                      <!-- Dropdown -->
+                      <div>
+                        <a class="dropdown-item" href="/events">All Events</a>
+                        <a class="dropdown-item" href="/resolutions">All Resolutions</a>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
 
               <!-- 'New' Dropdown Menu-->
               <div class="dropdown" style="margin-left:20px;">
@@ -70,7 +67,6 @@
             <a class="nav-item nav-link active" style="color:#fff" href="/login">Login <span class="sr-only">(current)</span></a>
             <a class="nav-item nav-link" style="color:#fff" href="/signup">Signup</a>
           </div>
-        </div>
           <% end %>
       </nav>
 
