@@ -1,42 +1,42 @@
 <div class="container mt-4">
   <h3 class="display-4 text-center">Add an Event</h3>
 
-<!-- warning/flash message -->
-<% if flash.has?(:message) %>
-  <div class="alert alert-warning" role="alert">
-      <%= flash[:message] %>
-  </div>
-<% end %><br></br>
-
-<form action="/events/show" method="POST">
-  <div class="row justify-content-center">
-    <div class="form-group col-md-4">
-      <div class="container" style="margin-top:20px;">
-	       <div class="row">
-           <div class="col-xs-4">
-
-  <label for="event_name">Event Name:</label>
-  <form class="form-inline">
-    <div class="form-group col-sm">
-      <input class="form-control" type="text" name="name" placeholder="Tried Pok Pok" id="event_name"></input>
-    </div>
-  </form>
-
-  <label for="event_date">Event Date:</label>
-    <div class="form-group col-sm">
-      <input class="form-control" type="date" name="date" id="event_date"></input>
-    </div>
-  <label for="event_desc">Description(optional):</label>
-    <div class="form-group col-sm">
-      <textarea class="form-control" name="description" placeholder="Who knew fish wings would be soo good." id="event_desc"></textarea>
-    </div>
-
-    <div class="row justify-content-center">
-      <button type="submit" class="btn btn-primary">Create</button>
-    </div>
-</form>
-</div>
-  </div>
-    </div>
+    <!-- warning/flash message -->
+    <% if flash.has?(:message) %>
+      <div class="alert alert-warning" role="alert">
+        <%= flash[:message] %>
       </div>
+    <% end %><br></br>
+
+    <form action="/events/show" method="POST">
+      <div class="row justify-content-center">
+        <div class="form-group col-md-4">
+          <div class="container" style="margin-top:20px;">
+	           <div class="row">
+               <div class="col-xs-4">
+
+                 <label for="event_name">Event Name:</label>
+                 <form class="form-inline">
+                   <div class="form-group col-sm">
+                     <input class="form-control" type="text" name="name" placeholder="Tried Pok Pok" id="event_name"></input>
+                   </div>
+                 </form>
+
+                 <label for="event_date">Event Date:</label>
+                 <div class="form-group col-sm">
+                   <input class="form-control" type="date" name="date" id="event_date"></input>
+                 </div>
+                 <label for="event_desc">Description(optional):</label>
+                 <div class="form-group col-sm">
+                   <textarea class="form-control" name="description" placeholder="Who knew fish wings would be soo good." id="event_desc"></textarea>
+                 </div>
+
+                 <div class="row justify-content-center">
+                   <button type="submit" class="btn btn-primary">Create</button>
+                 </div>
+               </div>
+             </div>
+           </div>
         </div>
+    </form>
+</div>
