@@ -16,7 +16,7 @@ you can look back and reminisce on all the fun things you've accomplished come D
 ## Usage
 
 Download or Fork this repository
-- `cd auction-calendar` into the projects directory
+- `cd this-year` into the projects directory
 - `bundle install`
 - `rake db:migrate`
 - `rackup config.ru` or `shotgun` to launch local server
