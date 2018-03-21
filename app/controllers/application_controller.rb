@@ -1,9 +1,7 @@
 require './config/environment'
 
 class ApplicationController < Sinatra::Base
-
   use Rack::Flash
-
   configure do
     set :public_folder, 'public'
     set :views, 'app/views'
@@ -12,11 +10,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/" do
-    if logged_in?
-      redirect "/users/#{current_user.slug}"
-    else
-      erb :index
-    end
+    if logged_in? then redirect "/users/#{current_user.slug}" else erb :index end
   end
 
   get '/about' do
