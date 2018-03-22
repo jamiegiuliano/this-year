@@ -9,20 +9,22 @@ class ResolutionsController < ApplicationController
 
   post '/resolutions/show' do
     if logged_in?
-      if !params["resolution"]["name"].empty? && !params["res_id"].empty?
-        current_user.resolutions.create(params["resolution"])
-
-        params[:res_id].each do |id|
-          res = Resolution.find_by_id(id)
-          current_user.resolutions << res
-          current_user.save
-        end
-      elsif !params["resolution"]["name"].empty?
-        current_user.resolutions.create(params["resolution"])
-      else
+      if !params["resolution"]["name"].empty?
+        current_user.resolutions.create(params["resolution"]) unless params["resolution"].empty?
+      elsif params[:res_id].nil? && params["resolution"]["name"].empty?
       flash[:message] = "Resolutions must have Name."
       erb :'resolutions/new'
       end
+
+    unless params[:res_id].nil?
+      params[:res_id].each do |id|
+        res = Resolution.find_by_id(id)
+        current_user.resolutions << res
+        current_user.save
+      end
+    end
+
+    redirect "/resolutions"
     else
     redirect "/login"
     end
