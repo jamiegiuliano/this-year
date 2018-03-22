@@ -25,6 +25,10 @@ class ApplicationController < Sinatra::Base
     def current_user
       @current_user ||= User.find_by(id: session[:user_id])
     end
+
+    def authorized_to_edit?(resolution)
+      logged_in? && current_user.resolutions.include?(resolution)
+    end
   end
 
 end

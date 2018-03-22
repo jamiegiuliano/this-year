@@ -32,7 +32,7 @@ class ResolutionsController < ApplicationController
 
   get '/resolutions/:id' do
     @resolution = Resolution.find_by_id(params[:id])
-    if logged_in? && current_user.resolutions.include?(@resolution)
+    if authorized_to_edit?(@resolution)
       erb :'resolutions/show'
     else
       redirect "/users/#{current_user.slug}"
@@ -41,7 +41,7 @@ class ResolutionsController < ApplicationController
 
   get '/resolutions/:id/edit' do
     @resolution = Resolution.find_by_id(params[:id])
-    if logged_in? && current_user.resolutions.include?(@resolution)
+    if authorized_to_edit?(@resolution)
       erb :'resolutions/edit'
     else
       redirect "/users/#{current_user.slug}"
