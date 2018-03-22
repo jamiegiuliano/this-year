@@ -2,7 +2,7 @@
 
 ![Alt Text](giphy.gif)
 
-Flatiron School - Sinatra Final Portfolio Project
+Flatiron School - Sinatra Portfolio Project
 
 Years seems to pass incredibly fast and before you know it, those resolutions from the beginning of the year
 are forgotten and your left wondering "What actually happened this year?"
