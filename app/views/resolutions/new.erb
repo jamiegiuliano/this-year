@@ -1,13 +1,6 @@
 <div class="container mt-4">
   <h3 class="display-4 text-center">Add a Resolution</h3>
 
-    <!-- warning/flash message -->
-    <% if flash.has?(:message) %>
-      <div class="alert alert-warning" role="alert">
-          <%= flash[:message] %>
-      </div>
-    <% end %>
-
     <form action="/resolutions/show" method="POST">
       <div class="row justify-content-center">
         <div class="form-group col-md-4">
@@ -36,6 +29,17 @@
                   </div>
                 </div>
 <br />
+
+            <!-- warning/flash message -->
+        <div class="container mt-4">
+          <div class="row col-xs-4 justify-content-center">
+            <% if flash.has?(:message) %>
+              <div class="alert alert-warning" role="alert">
+                <%= flash[:message] %>
+              </div>
+            <% end %>
+          </div>
+        </div>
 
             <p style="font-size: 1.25em;">and/or Create a New Resolution:</p>
               <form class="form-inline">

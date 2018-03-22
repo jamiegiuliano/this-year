@@ -1,10 +1,6 @@
 class ResolutionsController < ApplicationController
   get '/resolutions' do
-    if logged_in?
-      erb :'resolutions/index'
-    else
-      redirect to "/login"
-    end
+    if logged_in? then erb :'resolutions/index' else redirect to "/login" end
   end
 
   get '/resolutions/new' do
@@ -13,7 +9,7 @@ class ResolutionsController < ApplicationController
 
   post '/resolutions/show' do
     if logged_in?
-      if params["resolution"]["name"] && params["res_id"]
+      if !params["resolution"]["name"].empty? && !params["res_id"].empty?
         current_user.resolutions.create(params["resolution"])
 
         params[:res_id].each do |id|
@@ -21,15 +17,15 @@ class ResolutionsController < ApplicationController
           current_user.resolutions << res
           current_user.save
         end
-      elsif params["resolution"]["name"]
+      elsif !params["resolution"]["name"].empty?
         current_user.resolutions.create(params["resolution"])
-      end
-    else
+      else
       flash[:message] = "Resolutions must have Name."
       erb :'resolutions/new'
+      end
+    else
+    redirect "/login"
     end
-
-    redirect "/resolutions"
   end
 
   get '/resolutions/:id' do
@@ -64,7 +60,7 @@ class ResolutionsController < ApplicationController
 
   delete '/resolutions/:id/delete' do
     @resolution = Resolution.find_by_id(params[:id])
-    
+
     if @resolution.users.include?(current_user) then current_user.resolutions.delete(@resolution) else redirect "/users/#{@resolution.user.slug}" end
 
     redirect "/resolutions"
