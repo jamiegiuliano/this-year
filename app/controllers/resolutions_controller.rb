@@ -8,13 +8,14 @@ class ResolutionsController < ApplicationController
   end
 
   post '/resolutions/show' do
-    if logged_in?
-      if !params["resolution"]["name"].empty?
-        current_user.resolutions.create(params["resolution"]) unless params["resolution"].empty?
-      elsif params[:res_id].nil? && params["resolution"]["name"].empty?
-      flash[:message] = "Resolutions must have Name."
-      erb :'resolutions/new'
-      end
+    if !logged_in?
+      redirect "/login"
+    elsif !params["resolution"]["name"].empty?
+      current_user.resolutions.create(params["resolution"])
+    elsif params[:res_id].nil? && params["resolution"]["name"].empty?
+    flash[:message] = "Resolutions must have Name."
+    erb :'resolutions/new'
+    end
 
     unless params[:res_id].nil?
       params[:res_id].each do |id|
@@ -25,9 +26,6 @@ class ResolutionsController < ApplicationController
     end
 
     redirect "/resolutions"
-    else
-    redirect "/login"
-    end
   end
 
   get '/resolutions/:id' do
