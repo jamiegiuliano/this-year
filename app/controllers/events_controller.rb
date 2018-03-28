@@ -13,17 +13,27 @@ class EventsController < ApplicationController
   end
 
   post '/events/show' do
-    if logged_in?
-      if !params["name"].empty? && !params["date"].empty?
-        current_user.events.create(params)
-        redirect "/events"
-      else
-        flash[:message] = "Event must have Name and Date."
-        erb :'events/new'
-      end
-    else
+    if !logged_in?
       redirect "/login"
+    elsif !params["name"].empty? && !params["date"].empty?
+      current_user.events.create(params)
+      redirect "/events"
+    else
+      flash[:message] = "Event must have Name and Date."
+      erb :'events/new'
     end
+
+    #if logged_in?
+    #  if !params["name"].empty? && !params["date"].empty?
+    #    current_user.events.create(params)
+    #    redirect "/events"
+    #  else
+    #    flash[:message] = "Event must have Name and Date."
+    #    erb :'events/new'
+    #  end
+    #else
+    #  redirect "/login"
+    #end
   end
 
   get '/events/:id' do
