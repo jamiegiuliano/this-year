@@ -49,7 +49,6 @@
             <ul>
               <% Event.order(:date).each do |event| %>
                 <% if event.user == current_user %>
-                  <% current_user.events.each do |event| %>
                     <div class="container">
                       <li><%= event.date %></li>
                         <label for="<%= event.id%>"><%=event.name%></input></label><br />
@@ -57,7 +56,6 @@
                     </div>
                     <br></br>
                     <% end %>
-                  <% end %>
                 <% end %>
               </ul>
             </div>
